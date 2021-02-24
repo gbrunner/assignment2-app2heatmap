@@ -1,7 +1,7 @@
-require(["esri/config","esri/Map", "esri/views/MapView","esri/widgets/BasemapToggle", "esri/widgets/BasemapGallery", "esri/layers/FeatureLayer", "esri/WebMap",
-         "esri/core/urlUtils","esri/layers/CSVLayer","dojo/domReady!"], 
+require(["esri/config", "esri/Map", "esri/views/MapView", "esri/core/urlUtils","esri/layers/CSVLayer","dojo/domReady!"
+        ], 
       
-        function(esriConfig, Map, MapView, BasemapToggle, BasemapGallery, FeatureLayer, WebMap, urlUtils, CSVLayer){
+        function(esriConfig, Map, MapView, urlUtils, CSVLayer){
   
   //csv files require CORS enabled server if not on same domain as your website - so proxy required//
   var url = "https://raw.githubusercontent.com/gbrunner/Advanced_Python_for_GIS_and_RS/master/Week%202/stl_crime_wgs_84.csv";

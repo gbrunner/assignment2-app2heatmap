@@ -9,11 +9,11 @@ require(["esri/config","esri/Map", "esri/views/MapView","esri/widgets/BasemapTog
          esriConfig.request.corsEnabledServers.push('https://rawgit.com');
   
   
-  const template = {
-    title: "Crime Index", 
-  };
+ const template = {
+   title: "Crime committed at {ILEADSStreet}"
+};
   
-  const renderer = {
+  csvLayer.renderer = {
     type: "heatmap",
       colorStops: [
         {ratio:0, color: "rgba(0,255,255,255)"},
@@ -25,7 +25,7 @@ require(["esri/config","esri/Map", "esri/views/MapView","esri/widgets/BasemapTog
     minPixelIntensity: 0
   };
         
-  const layer = new CSVLayer({
+  const csvLayer = new CSVLayer({
     url: url,
     title: "STL Crime Heatmap",
     copyright: "STLPD",
@@ -39,7 +39,7 @@ require(["esri/config","esri/Map", "esri/views/MapView","esri/widgets/BasemapTog
   
   var map = new Map({
           basemap: "arcgis-nova", // Basemap layer service
-          layers: [layer]
+          layers: [csvLayer]
         });
   
   
